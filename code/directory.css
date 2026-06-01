@@ -1,0 +1,511 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #FAF9F5;
+    color: #1A1A1A;
+}
+
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px; 
+}
+
+.site-header {
+    border-bottom: 1px solid #EBE9E2;
+    padding: 16px 0;
+    background-color: #FAF9F5;
+    box-shadow: 0 10px 30px rgba(26, 26, 26, 0.04); 
+    position: sticky;
+    top: 0;
+    z-index: 100; 
+}
+
+.header-wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 34px; 
+    font-weight: 400; 
+    color: #1A1A1A;
+}
+
+.main-nav {
+    display: flex;
+    gap: 48px; 
+    margin-left: auto;  
+    margin-right: 56px; 
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #5A5A5A;
+    font-size: 15px;    
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.main-nav a.active {
+    color: #B59A57;
+}
+
+.main-nav a:hover:not(.active) {
+    color: #B59A57;
+}
+
+.profile-btn {
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-btn:hover {
+    transform: scale(1.05);
+}
+
+.directory-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.directory-hero {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.directory-hero h1 {
+    font-family: 'Manrope';
+    font-size: 38px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.directory-hero p {
+    font-size: 15px;
+    color: #666666;
+    margin-bottom: 24px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 380px; 
+    font-family: 'Manrope', sans-serif;
+}
+
+.dropdown-trigger {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1.6px solid #1A1A1A; 
+    border-radius: 12px;
+    padding: 16px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown-trigger .selected-value {
+    font-size: 18px;
+    font-weight: 700; 
+    color: #1A1A1A;
+}
+
+.dropdown-chevron {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #1A1A1A;
+    border-bottom: 2px solid #1A1A1A;
+    transform: rotate(45deg); /* Menghadap bawah */
+    transition: transform 0.3s ease;
+    margin-right: 4px;
+    margin-top: -4px;
+}
+
+.dropdown.open .dropdown-chevron {
+    transform: rotate(-135deg);
+    margin-top: 4px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    z-index: 99;
+    display: none; 
+}
+
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 16px 28px; 
+    font-size: 16px;
+    font-weight: 500;
+    color: #1A1A1A;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: left;
+}
+
+.dropdown-item:hover, .dropdown-item.active {
+    background-color: #FAF9F5; 
+    font-weight: 600;
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.store-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.store-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.store-tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #888888;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.45;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.store-meta {
+    border-top: 1px solid #f2f2f2;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #777777;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 16px;
+}
+
+.meta-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #999999;
+    font-size: 14px;
+}
+
+.logo-box {
+    height: 130px;
+    background-color: #fafafa;
+    border-bottom: 1px solid #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    user-select: none;
+    text-align: center;
+    
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1A1A1A;
+}
+
+.sub-logo {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.logo-serif { 
+    font-family: 'Playfair Display SC', serif; 
+    letter-spacing: 3px;
+}
+.logo-light { 
+    font-weight: 300; 
+    letter-spacing: 4px;
+}
+.logo-italic { 
+    font-style: italic; 
+    text-transform: none; 
+    font-weight: 500;
+}
+
+.logo-danger { color: #dc3545; }      /* Din Tai Fung */
+.logo-primary { color: #0f4c81; }     /* Samsung, Decathlon */
+.logo-info { color: #00a8cc; }        /* Bath & Body Works */
+.logo-success { color: #1b4d3e; }     /* The Body Shop */
+.logo-warning { color: #b38f4f; }     /* Godiva */
+
+.logo-dark {
+    background-color: #111111;
+    color: #ffffff;
+    border-bottom: 1px solid #222222;
+}
+
+.logo-ikea {
+    background-color: #0051ba;
+    color: #ffcc00 !important;
+    font-style: italic;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo-box.logo-circle {
+    position: relative;
+    font-size: 12px;
+    line-height: 1.2;
+}
+.logo-box.logo-circle::after {
+    content: "";
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    border: 2px solid #1b4d3e;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.footer {
+    background-color: #F5F4EE; 
+    border-top: 1px solid #EBE9E2;
+    padding: 60px 24px 32px 24px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.footer-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 45px;
+    position: relative;
+    left: 60px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-heading {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-link {
+    color: #5A5A5A;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+    width: fit-content;
+}
+
+.footer-link:hover {
+    color: #B59A57;
+    transform: translateX(3px); 
+}
+
+.social-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-icon img {
+    object-fit: contain;
+    height: auto;
+}
+
+.social-icon.instagram img {
+    width: 65px;
+    position: relative;
+    right: 10px;
+    top: -20px;
+}
+
+.social-icon.tiktok img {
+    width: 84px; 
+    position: relative;
+    right: 38px;
+    top: -20px;
+}
+
+.social-icon.facebook img {
+    width: 85px;
+    position: relative;
+    right: 75px;
+    top: -20px;
+}
+
+.social-icon.x img {
+    width: 80px; 
+    position: relative;
+    right: 110px;
+    top: -19px;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+}
+
+.app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.app-btn {
+    display: inline-block;
+    max-width: 135px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.app-btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px; 
+}
+
+.app-btn:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+.footer-copyright {
+    max-width: 1240px;
+    margin: 0 auto;
+    border-top: 1px solid #EBE9E2;
+    padding-top: 24px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #8A8A8A;
+}
+
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 48px 20px 24px 20px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr; 
+        gap: 28px;
+    }
+    
+    .footer-heading {
+        margin-bottom: 12px;
+    }
+    
+    .app-buttons {
+        flex-direction: row; 
+        gap: 12px;
+    }
+}

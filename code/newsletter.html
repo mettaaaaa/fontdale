@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400..700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="newsletter.css">
+    <script src="newsletter.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-wrapper">
+            <div class="brand">FONTDALE</div>
+            <nav class="main-nav">
+                <a href="home.html">Home</a>
+                <a href="directory.html">Directory</a>
+                <a href="event.html">Events</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="newsletter.html" class="active">Newsletter</a>
+            </nav>
+        <a href="newsletter.html" class="profile-btn">
+            <img src="/assets/user icon.png" alt="Profile">
+        </a>
+        </div>
+    </header>  
+
+    <main class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="content-container">
+            <h1 class="main-title">Newsletter Subscription</h1>
+            <p class="subtitle">Stay connected with FontDale and never miss exclusive offers, events, and updates</p>
+
+            <form class="subscription-card" novalidate>
+                
+                <div class="form-group">
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" placeholder="Enter your first and last name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="text" id="email" placeholder="example@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="text" id="phone" placeholder="+62 123 456 789">
+                </div>
+
+                <div class="form-group">
+                    <label>Topic of Interest * <span class="label-note">(Select 1-5)</span></label>
+                    <div class="checkbox-grid">
+                        <label class="selection-box">
+                            <input type="checkbox" name="topic" value="fashion">
+                            <span>Fashion & Apparel</span>
+                        </label>
+                        <label class="selection-box">
+                            <input type="checkbox" name="topic" value="dining">
+                            <span>Dining & Restaurants</span>
+                        </label>
+                        <label class="selection-box">
+                            <input type="checkbox" name="topic" value="electronics">
+                            <span>Electronics & Technology</span>
+                        </label>
+                        <label class="selection-box">
+                            <input type="checkbox" name="topic" value="beauty">
+                            <span>Beauty & Wellness</span>
+                        </label>
+                        <label class="selection-box">
+                            <input type="checkbox" name="topic" value="home">
+                            <span>Home & Living</span>
+                        </label>
+                        <label class="selection-box">
+                            <input type="checkbox" name="topic" value="events">
+                            <span>Events & Entertainment</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Update Frequency Preference *</label>
+                    <div class="radio-stack">
+                        <label class="selection-box radio-box">
+                            <input type="radio" name="frequency" value="daily" checked>
+                            <div class="radio-text">
+                                <span class="radio-title">Daily</span>
+                                <span class="radio-desc">Receives updates every day</span>
+                            </div>
+                        </label>
+                        <label class="selection-box radio-box">
+                            <input type="radio" name="frequency" value="weekly">
+                            <div class="radio-text">
+                                <span class="radio-title">Weekly</span>
+                                <span class="radio-desc">Get a weekly update every Monday</span>
+                            </div>
+                        </label>
+                        <label class="selection-box radio-box">
+                            <input type="radio" name="frequency" value="monthly">
+                            <div class="radio-text">
+                                <span class="radio-title">Monthly</span>
+                                <span class="radio-desc">Monthly summary of news and events</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Subscribe to Newsletter</button>
+                <p class="disclaimer">By subscribing, you agree to receive marketing communications from FontDale. You can unsubscribe at any time.</p>
+            </form>
+        </div>
+    </main>
+
+<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4 class="footer-heading">LINKS</h4>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Press</a>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">COMPANY</h4>
+                <a href="#" class="footer-link">Careers</a>
+                <a href="#" class="footer-link">Contact</a>
+                <a href="#" class="footer-link">Partnerships</a>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">CONNECT WITH US</h4>
+                <div class="social-container">
+                    <a class="social-icon instagram" href="https://instagram.com" target="_blank">
+                        <img src="/assets/instagram.png" alt="Instagram">
+                    </a>
+                    <a class="social-icon tiktok" href="https://tiktok.com" target="_blank">
+                        <img src="/assets/tiktok.png" alt="TikTok">
+                    </a>
+                    <a class="social-icon facebook" href="https://facebook.com" target="_blank">
+                        <img src="/assets/facebook.png" alt="Facebook">
+                    </a>
+                    <a class="social-icon x" href="https://x.com" target="_blank">
+                        <img src="/assets/X.png" alt="X">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">DOWNLOAD OUR APP</h4>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn app-store">
+                        <img src="/assets/appstore.png" alt="Download on App Store">
+                    </a>
+                    <a href="#" class="app-btn google-play">
+                        <img src="/assets/googleplay.png" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-copyright">
+            © 2026 FONTDALE | ALL RIGHTS RESERVED
+        </div>
+    </footer>
+
+</body>
+</html>
