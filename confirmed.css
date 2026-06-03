@@ -8,12 +8,13 @@ body {
     font-family: 'Manrope', sans-serif;
     background-color: #FAF9F5;
     color: #1A1A1A;
+    -webkit-font-smoothing: antialiased;
 }
 
 .wrapper {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 24px;
 }
 
 .site-header {
@@ -74,6 +75,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transition: transform 0.2s ease;
 }
 
 .profile-btn img {
@@ -86,60 +88,67 @@ body {
     transform: scale(1.05);
 }
 
-/* HERO & MODAL STYLES */
+.menu-toggle {
+    display: none;
+}
+
 .hero-section {
     width: 100%;
-    height: 520px;
-    /* Menggunakan background gedung modern bertekstur biru/kaca */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80');
-    background-size: cover;
-    background-position: center;
+    min-height: calc(100vh - 74px); 
+    position: relative; 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 40px 24px;
+    overflow: hidden;
 }
 
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.subscription-card,
 .modal-card {
     background-color: #ffffff;
     width: 100%;
     max-width: 580px;
     border-radius: 20px;
     padding: 48px 40px;
-    text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 2; 
 }
 
-/* Pure CSS Checkmark Icon */
+.subscription-card {
+    max-width: 680px;
+    padding: 44px 40px;
+    text-align: left;
+}
+
+.modal-card {
+    text-align: center;
+}
+
 .success-icon-circle {
     width: 64px;
     height: 64px;
-    background-color: #2ecc71;
     border-radius: 50%;
     margin: 0 auto 24px auto;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.checkmark-stem {
-    position: absolute;
-    width: 4px;
-    height: 22px;
-    background-color: #ffffff;
-    left: 36px;
-    top: 18px;
-    transform: rotate(45deg);
-    border-radius: 2px;
-}
-
-.checkmark-kick {
-    position: absolute;
-    width: 12px;
-    height: 4px;
-    background-color: #ffffff;
-    left: 23px;
-    top: 31px;
-    transform: rotate(45deg);
-    border-radius: 2px;
+.success-icon-circle img {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
 }
 
 .modal-title {
@@ -157,24 +166,159 @@ body {
     margin: 0 auto 32px auto;
 }
 
-.btn-subscribe {
-    background-color: #2d2d2d;
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.label-note {
+    font-weight: 400;
+    color: #888888;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #333333;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #cbd5e1;
+}
+
+.form-group input:focus {
+    border-color: #a37a5c;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.selection-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.selection-box:hover {
+    background-color: #fdfbf7;
+}
+
+.selection-box input[type="checkbox"],
+.selection-box input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #4a5568;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.selection-box span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    position: relative;
+    top: -2px; 
+}
+
+.radio-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-box {
+    align-items: flex-start;
+    padding: 16px;
+}
+
+.radio-box input[type="radio"] {
+    margin-top: 3px;
+}
+
+.radio-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.radio-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.radio-desc {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666666;
+}
+
+.btn-submit, .btn-subscribe {
+    width: 100%;
+    background-color: #4a4a4a;
     color: #ffffff;
     border: none;
-    padding: 14px 32px;
+    border-radius: 8px;
+    padding: 16px;
     font-size: 15px;
     font-weight: 600;
-    border-radius: 8px;
+    font-family: inherit;
     cursor: pointer;
-    transition: background-color 0.2s;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.btn-subscribe {
+    background-color: #2d2d2d;
+    padding: 14px 32px;
+    margin: 0;
+}
+
+.btn-submit:hover {
+    background-color: #333333;
 }
 
 .btn-subscribe:hover {
     background-color: #1a1a1a;
+    color: #ffffff;
 }
 
+.disclaimer {
+    font-size: 11px;
+    color: #777777;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 10px;
+}
 
-/* FOOTER STYLES */
 .footer {
     background-color: #F5F4EE; 
     border-top: 1px solid #EBE9E2;
@@ -242,33 +386,10 @@ body {
     height: auto;
 }
 
-.social-icon.instagram img {
-    width: 65px;
-    position: relative;
-    right: 10px;
-    top: -20px;
-}
-
-.social-icon.tiktok img {
-    width: 84px; 
-    position: relative;
-    right: 38px;
-    top: -20px;
-}
-
-.social-icon.facebook img {
-    width: 85px;
-    position: relative;
-    right: 75px;
-    top: -20px;
-}
-
-.social-icon.x img {
-    width: 80px; 
-    position: relative;
-    right: 110px;
-    top: -19px;
-}
+.social-icon.instagram img { width: 65px; position: relative; right: 10px; top: -20px; }
+.social-icon.tiktok img { width: 84px; position: relative; right: 38px; top: -20px; }
+.social-icon.facebook img { width: 85px; position: relative; right: 75px; top: -20px; }
+.social-icon.x img { width: 80px; position: relative; right: 110px; top: -19px; }
 
 .social-icon:hover {
     transform: translateY(-3px);
@@ -310,14 +431,133 @@ body {
     color: #8A8A8A;
 }
 
+@media (max-width: 1024px) {
+    .header-wrapper {
+        padding: 0 30px;
+    }
+
+    .main-nav {
+        gap: 24px;
+        margin-right: 20px;
+    }
+}
+
 @media (max-width: 992px) {
     .footer-container {
         grid-template-columns: repeat(2, 1fr); 
         gap: 32px;
+        left: 0; 
+    }
+}
+
+@media (max-width: 768px) {
+    .header-wrapper {
+        padding: 16px 24px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .brand {
+        order: 1;
+        margin-right: auto;
+    }
+
+    .profile-btn {
+        order: 2;
+        margin-right: 16px;
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        order: 3;
+        z-index: 101;
+    }
+
+    .menu-toggle span {
+        width: 24px;
+        height: 3px;
+        background-color: #1A1A1A;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #FAF9F5;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        border-top: 1px solid #EBE9E2;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        z-index: 99;
+    }
+
+    .main-nav.open {
+        max-height: 350px;
+    }
+
+    .main-nav a {
+        width: 100%;
+        padding: 16px 24px;
+        border-bottom: 1px solid #EBE9E2;
+    }
+
+    .subscription-card,
+    .modal-card {
+        padding: 32px 24px;
     }
 }
 
 @media (max-width: 576px) {
+    .brand {
+        font-size: 28px;
+    }
+
+    .hero-section {
+        padding: 24px 16px;
+    }
+
+    .subscription-card,
+    .modal-card {
+        padding: 28px 16px;
+        border-radius: 16px;
+    }
+
+    .modal-title {
+        font-size: 26px;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
     .footer {
         padding: 48px 20px 24px 20px;
     }
@@ -334,5 +574,10 @@ body {
     .app-buttons {
         flex-direction: row; 
         gap: 12px;
+    }
+
+    .social-container {
+        flex-wrap: wrap;
+        gap: 8px;
     }
 }

@@ -1,83 +1,62 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.subscription-card');
-    const fullName = document.getElementById('fullname');
-    const email = document.getElementById('email');
-    const phone = document.getElementById('phone');
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.querySelector('.main-nav');
+const navLinks = document.querySelectorAll('.main-nav a');
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        mainNav.classList.toggle('open');
+    });
+}
 
-        const nameValue = fullName.value.trim();
-  
-        if (nameValue === "") {
-            alert("Validation Failed: Full name is required.");
-            fullName.focus();
-            return;
-        }
-        if (nameValue.length < 3 || nameValue.length > 50) {
-            alert("Validation Failed: Name must be between 3 and 50 characters.");
-            fullName.focus();
-            return;
-        }
-        const allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ '-";
-        for (let i = 0; i < nameValue.length; i++) {
-            if (!allowedChars.includes(nameValue[i])) {
-                alert("Validation Failed: Name can only contain letters and spaces.");
-                fullName.focus();
-                return;
-            }
-        }
-
-        const emailValue = email.value.trim();
-        const atIndex = emailValue.indexOf('@');
-        const lastAtIndex = emailValue.lastIndexOf('@');
-        const dotIndex = emailValue.lastIndexOf('.');
-
-        if (atIndex < 1 || atIndex !== lastAtIndex || dotIndex <= atIndex + 1 || dotIndex === emailValue.length - 1 || emailValue.includes(" ")) {
-            alert("Invalid email format (Example: name@gmail.com).");
-            email.focus();
-            return;
-        }
-
-        const phoneValue = phone.value.trim();
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        navLinks.forEach(item => item.classList.remove('active'));
+        e.currentTarget.classList.add('active');
         
-        if (phoneValue.length < 9 || phoneValue.length > 15) {
-            alert("Phone number must be between 9 and 15 digits.");
-            phone.focus();
-            return;
+        if (window.innerWidth <= 768) {
+            menuToggle.classList.remove('active');
+            mainNav.classList.remove('open');
         }
-
-        for (let i = 0; i < phoneValue.length; i++) {
-            const char = phoneValue[i];
-            
-            if (i === 0 && char === '+') {
-                continue;
-            }
-            if (char === ' ') {
-                continue;
-            }
-            if (char < '0' || char > '9') {
-                alert("Phone number can only contain digits.");
-                phone.focus();
-                return;
-            }
-        }
-
-        const checkedTopics = document.querySelectorAll('input[name="topic"]:checked');
-        
-        if (checkedTopics.length === 0) {
-            alert("You must select at least 1 topic.");
-            return;
-        }
-
-        const selectedFrequency = document.querySelector('input[name="frequency"]:checked');
-        
-        if (!selectedFrequency) {
-            alert("Please select a newsletter update frequency preference.");
-            return;
-        }
-        
-        alert("Subscription successful! Thank you for subscribing to FontDale.");
-        window.location.href = 'confirmed.html';
     });
 });
+
+const subscriptionForm = document.querySelector('.subscription-card');
+
+if (subscriptionForm) {
+    subscriptionForm.addEventListener('submit', (e) => {
+        e.preventDefault(); 
+
+        const fullNameInput = document.getElementById('fullname');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const checkedTopics = document.querySelectorAll('input[name="topic"]:checked');
+
+        const fullName = fullNameInput.value.trim();
+        const email = emailInput.value.trim();
+        const phone = phoneInput.value.trim();
+
+        if (fullName === "" || email === "" || phone === "") {
+            alert("Please fill out all required fields (*)");
+            return; 
+        }
+
+        if (!email.includes('@') || !email.includes('.')) {
+            alert("Please enter a valid email address (e.g., name@example.com)");
+            emailInput.focus();
+            return;
+        }
+
+        if (checkedTopics.length === 0) {
+            alert("Please select at least 1 Topic of Interest.");
+            return;
+        }
+        if (checkedTopics.length > 5) {
+            alert("You can select a maximum of 5 topics.");
+            return;
+        }
+
+        alert("Thank you! You have successfully subscribed to FontDale newsletter.");
+        window.location.href = 'confirmed.html'; 
+    });
+}

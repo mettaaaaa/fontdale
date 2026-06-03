@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="directory.css">
     <script src="directory.js" defer></script>
-
 </head>
 <body>
 
     <header class="site-header">
         <div class="header-wrapper">
             <div class="brand">FONTDALE</div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             <nav class="main-nav">
                 <a href="home.html">Home</a>
                 <a href="directory.html" class="active">Directory</a>
@@ -24,7 +28,7 @@
                 <a href="newsletter.html">Newsletter</a>
             </nav>
             <a href="newsletter.html" class="profile-btn">
-                <img src="/assets/user icon.png" alt="Profile">
+                <img src="assets/user icon.png" alt="Profile">
             </a>
         </div>
     </header>  
@@ -34,533 +38,844 @@
             <h1>Store Directory</h1>
             <p>Find here a comprehensive list of premium brands across fashion, food and more.</p>
             
-    <div class="dropdown">
-        <button class="dropdown-trigger" id="dropdownBtn" type="button">
-            <span class="selected-value">All Levels</span>
-            <span class="dropdown-chevron"></span> </button>
-
-        <ul class="dropdown-menu" id="dropdownMenu">
-            <li class="dropdown-item active" data-value="all">All Levels</li>
-            <li class="dropdown-item" data-value="level-1">Level 1 - Fashion & Lifestyle</li>
-            <li class="dropdown-item" data-value="level-2">Level 2 - Dining & Wellness</li>
-            <li class="dropdown-item" data-value="level-3">Level 3 - Home & Sports</li>
-        </ul>
-    </div>
+            <div class="dropdown">
+                <button class="dropdown-trigger" id="dropdownBtn" type="button">
+                    <span class="selected-value">All Levels</span>
+                    <span class="dropdown-chevron"></span>
+                </button>
+                <ul class="dropdown-menu" id="dropdownMenu">
+                    <li class="dropdown-item active"><a href="directory.html">All Levels</a></li>
+                    <li class="dropdown-item"><a href="directory1.html">Level 1 - Fashion & Lifestyle</a></li>
+                    <li class="dropdown-item"><a href="directory2.html">Level 2 - Dining & Wellness</a></li>
+                    <li class="dropdown-item"><a href="directory3.html">Level 3 - Home & Sports</a></li>
+                </ul>
+            </div>
         </section>
 
         <div class="store-grid">
             
             <div class="store-card">
-                <div class="logo-box logo-serif">LOUIS VUITTON</div>
+                <div class="logo-box">
+                    <img src="assets/louis-vuitton.png" alt="Louis Vuitton Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Fashion</span>
                     <h3>Louis Vuitton</h3>
                     <p>A prestigious French luxury fashion house renowned for its iconic monogrammed trunks, leather goods, and ready-to-wear collections.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 123</div>
-                        <div class="meta-item location-icon">Level 1, Unit 01</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 123</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 01</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-light">GUCCI</div>
+                <div class="logo-box">
+                    <img src="assets/gucci.png" alt="Gucci Logo" class="brand-logo logo-small">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Fashion</span>
                     <h3>Gucci</h3>
                     <p>An influential Italian luxury brand redefining 21st-century fashion through contemporary design, eclectic style, and fine craftsmanship.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 456</div>
-                        <div class="meta-item location-icon">Level 1, Unit 02</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 456</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 02</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif">PRADA</div>
+                <div class="logo-box">
+                    <img src="assets/prada.png" alt="Prada Logo" class="brand-logo logo-small">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Fashion</span>
                     <h3>Prada</h3>
                     <p>An Italian luxury fashion brand known for traditional craftsmanship combined with cutting-edge design and modern aesthetic innovations.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 789</div>
-                        <div class="meta-item location-icon">Level 1, Unit 03</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 789</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 03</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif">DIOR</div>
+                <div class="logo-box">
+                    <img src="assets/dior.png" alt="Dior Logo" class="brand-logo logo-small">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Fashion</span>
                     <h3>Dior</h3>
                     <p>French luxury goods company famed for its revolutionary 'New Look' and timeless collections of haute couture, cosmetics, and fragrances.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 111</div>
-                        <div class="meta-item location-icon">Level 1, Unit 04</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 111</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 04</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box">CHANEL</div>
+                <div class="logo-box">
+                    <img src="assets/chanel.png" alt="Chanel Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Fashion</span>
                     <h3>Chanel</h3>
                     <p>An elite French fashion house focusing on high fashion, ready-to-wear items, luxury goods, haute couture, and world-class accessories.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 222</div>
-                        <div class="meta-item location-icon">Level 1, Unit 05</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 222</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 05</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif">HERMÈS<br><span class="sub-logo">PARIS</span></div>
+                <div class="logo-box">
+                    <img src="assets/hermes.png" alt="Hermès Logo" class="brand-logo logo-small">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Fashion</span>
                     <h3>Hermès</h3>
                     <p>A historic French luxury manufacturer specializing in leather goods, lifestyle accessories, home furnishings, perfumery, and jewelry.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 333</div>
-                        <div class="meta-item location-icon">Level 1, Unit 06</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 333</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 06</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif logo-italic">Yves Saint Laurent</div>
+                <div class="logo-box">
+                    <img src="assets/yves-saint-laurent.png" alt="Saint Laurent Logo" class="brand-logo logo-small">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Fashion</span>
-                    <h3>Saint Laurent</h3>
+                    <h3>Yves Saint Laurent</h3>
                     <p>Founded in 1961, Yves Saint Laurent is one of the most prominent fashion houses of the 20th century, known for modern and iconic pieces.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 444</div>
-                        <div class="meta-item location-icon">Level 1, Unit 07</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 444</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 07</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box">BALENCIAGA</div>
+                <div class="logo-box">
+                    <img src="assets/balenciaga.png" alt="Balenciaga Logo" class="brand-logo logo-small">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Fashion</span>
                     <h3>Balenciaga</h3>
                     <p>A luxury fashion house defined by a heritage of aesthetic innovation, sculptural silhouettes, and masterful modern streetwear concepts.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 555</div>
-                        <div class="meta-item location-icon">Level 1, Unit 08</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 555</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 08</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif">BURBERRY</div>
+                <div class="logo-box">
+                    <img src="assets/burberry.png" alt="Burberry Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Fashion</span>
                     <h3>Burberry</h3>
                     <p>A global British luxury brand with a deeply rooted heritage in innovative outerwear, quintessential trench coats, and signature tartan patterns.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 666</div>
-                        <div class="meta-item location-icon">Level 1, Unit 09</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 666</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 09</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif logo-light">Tiffany & Co.</div>
+                <div class="logo-box">
+                    <img src="assets/tiffany-co.png" alt="Tiffany & Co. Logo" class="brand-logo logo-small">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Jewelry</span>
                     <h3>Tiffany & Co.</h3>
                     <p>An iconic American luxury jewelry retailer, celebrated worldwide for its exquisite diamond creations and classic robin's egg blue boxes.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 777</div>
-                        <div class="meta-item location-icon">Ground Floor, Unit 10</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 777</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Ground Floor, Unit 10</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif">BVLGARI</div>
+                <div class="logo-box">
+                    <img src="assets/bvlgari.png" alt="Bulgari Logo" class="brand-logo logo-small">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Jewelry</span>
-                    <h3>Bulgari</h3>
+                    <h3>Bvlgari</h3>
                     <p>A magnificent Italian luxury brand renowned for its glamorous gemstone jewelry, luxury watches, fine fragrances, and leather accessories.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 888</div>
-                        <div class="meta-item location-icon">Ground Floor, Unit 11</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 888</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Ground Floor, Unit 11</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif logo-italic">Cartier</div>
+                <div class="logo-box">
+                    <img src="assets/cartier.png" alt="Cartier Logo" class="brand-logo logo-small">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Jewelry</span>
                     <h3>Cartier</h3>
                     <p>Regarded as one of the world's most prestigious jewelry manufacturers, designing legendary timepieces and exceptional high jewelry creations.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 999</div>
-                        <div class="meta-item location-icon">Ground Floor, Unit 12</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 999</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Ground Floor, Unit 12</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif">TWG<br><span class="sub-logo">TEA</span></div>
+                <div class="logo-box">
+                    <img src="assets/twg-tea.png" alt="TWG Tea Logo" class="brand-logo logo-tall">
+                </div>
                 <div class="card-content">
-                    <span class="store-tag">Food & Cafe</span>
+                    <span class="store-tag">Cafe</span>
                     <h3>TWG Tea</h3>
                     <p>The finest luxury tea brand in the world, offering an expansive global collection of exceptional single-estate harvests and unique blends.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 121</div>
-                        <div class="meta-item location-icon">Ground Floor, Unit 14</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 121</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Ground Floor, Unit 14</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif logo-italic">Ladurée<br><span class="sub-logo">Paris</span></div>
+                <div class="logo-box">
+                    <img src="assets/laduree.png" alt="Ladurée Logo" class="brand-logo logo-tall">
+                </div>
                 <div class="card-content">
-                    <span class="store-tag">Food & Cafe</span>
+                    <span class="store-tag">Bakery</span>
                     <h3>Ladurée</h3>
                     <p>An exquisite French luxury bakery and sweets house globally celebrated as the premier creator of the world's most famous double-decker macarons.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 131</div>
-                        <div class="meta-item location-icon">Ground Floor, Unit 15</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 131</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Ground Floor, Unit 15</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box">%<br><span class="sub-logo">ARABICA</span></div>
+                <div class="logo-box">
+                    <img src="assets/arabica.png" alt="% Arabica Logo" class="brand-logo logo-big">
+                </div>
                 <div class="card-content">
-                    <span class="store-tag">Food & Cafe</span>
+                    <span class="store-tag">Cafe</span>
                     <h3>% Arabica</h3>
                     <p>A specialized specialty coffee brand originating from Kyoto, Japan, committed to excellent custom-roasted coffee beans and minimalist design.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 141</div>
-                        <div class="meta-item location-icon">Ground Floor, Unit 16</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 141</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Ground Floor, Unit 16</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif logo-danger">鼎泰豐<br><span class="sub-logo">DIN TAI FUNG</span></div>
+                <div class="logo-box">
+                    <img src="assets/din-tai-fung.png" alt="Din Tai Fung Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
-                    <span class="store-tag">Food & Restaurant</span>
+                    <span class="store-tag">Restaurant</span>
                     <h3>Din Tai Fung</h3>
                     <p>An internationally acclaimed Taiwanese restaurant chain world-famous for its masterfully crafted signature Xiao Long Bao steamed dumplings.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 151</div>
-                        <div class="meta-item location-icon">Level 2, Unit 20</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 151</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 2, Unit 20</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif logo-light">francis<br><span class="sub-logo">ARTISAN BAKERY</span></div>
+                <div class="logo-box">
+                    <img src="assets/francis-artisan-bakery.png" alt="Francis Artisan Bakery Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
-                    <span class="store-tag">Food & Bakery</span>
+                    <span class="store-tag">Bakery</span>
                     <h3>Francis Artisan Bakery</h3>
                     <p>A premium boutique bakery combining traditional French baking techniques with healthy, natural ingredients and Asian flavor twists.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 161</div>
-                        <div class="meta-item location-icon">Level 2, Unit 21</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 161</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 2, Unit 21</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box">Aesop.</div>
+                <div class="logo-box">
+                    <img src="assets/aesop.png" alt="Aesop Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Beauty</span>
                     <h3>Aesop</h3>
                     <p>An exceptional Australian skin care brand offering sophisticated formulations for skin, hair, and body crafted with botanical ingredients.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 171</div>
-                        <div class="meta-item location-icon">Level 1, Unit 30</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 171</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 30</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif logo-primary">L'OCCITANE</div>
+                <div class="logo-box">
+                    <img src="assets/loccitane.png" alt="L'Occitane Logo" class="brand-logo logo-big">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Beauty</span>
                     <h3>L'Occitane</h3>
                     <p>An international retailer of organic, natural cosmetics and well-being products deeply rooted in the picturesque traditions of Provence, France.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 181</div>
-                        <div class="meta-item location-icon">Level 1, Unit 31</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 181</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 31</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-info">Bath & Body Works</div>
+                <div class="logo-box">
+                    <img src="assets/bbw.png" alt="Bath & Body Works Logo" class="brand-logo logo-big">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Beauty</span>
                     <h3>Bath & Body Works</h3>
                     <p>A vibrant destination for delicious sensory home fragrances, fine body mists, luxurious shower gels, and therapeutic hand soaps.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 191</div>
-                        <div class="meta-item location-icon">Level 1, Unit 32</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 191</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 32</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-success logo-circle">THE<br>BODY<br>SHOP</div>
+                <div class="logo-box">
+                    <img src="assets/the-body-shop.png" alt="The Body Shop Logo" class="brand-logo logo-square">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Beauty</span>
                     <h3>The Body Shop</h3>
                     <p>A global beauty brand pioneered in ethical, cruelty-free, and natural beauty products inspired by nature and socially responsible sourcing.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 202</div>
-                        <div class="meta-item location-icon">Level 1, Unit 33</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 202</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 33</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-light">JO MALONE<br><span class="sub-logo">LONDON</span></div>
+                <div class="logo-box">
+                    <img src="assets/jo-malone.png" alt="Jo Malone London Logo" class="brand-logo logo-tall">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Beauty & Fragrance</span>
                     <h3>Jo Malone London</h3>
                     <p>An iconic British fragrance house coveted for its unexpected, elegant colognes and luxurious bath, body, and home candle scents.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 212</div>
-                        <div class="meta-item location-icon">Level 1, Unit 34</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 212</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 34</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif">PIERRE HERMÉ<br><span class="sub-logo">PARIS</span></div>
+                <div class="logo-box">
+                    <img src="assets/pierre-herme.png" alt="Pierre Hermé Logo" class="brand-logo logo-big">
+                </div>
                 <div class="card-content">
-                    <span class="store-tag">Food & Cafe</span>
+                    <span class="store-tag">Bakery</span>
                     <h3>Pierre Hermé</h3>
                     <p>The elite French pastry house founded by the 'Picasso of Pastry', legendary for revolutionary flavor combinations in gourmet macarons.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 223</div>
-                        <div class="meta-item location-icon">Ground Floor, Unit 17</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 223</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Ground Floor, Unit 17</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif">DEAN & DELUCA</div>
+                <div class="logo-box">
+                    <img src="assets/dean-deluca.png" alt="Dean & DeLuca Logo" class="brand-logo logo-big">
+                </div>
                 <div class="card-content">
-                    <span class="store-tag">Food & Grocer</span>
+                    <span class="store-tag">Restaurant</span>
                     <h3>Dean & DeLuca</h3>
                     <p>An upscale American gourmet marketplace presenting artisanal epicurean treats, premium cheeses, international provisions, and fine foods.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 233</div>
-                        <div class="meta-item location-icon">Ground Floor, Unit 18</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 233</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Ground Floor, Unit 18</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif logo-warning">GODIVA<br><span class="sub-logo">Belgium 1926</span></div>
+                <div class="logo-box">
+                    <img src="assets/godiva.png" alt="Godiva Chocolatier Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
-                    <span class="store-tag">Food & Chocolate</span>
+                    <span class="store-tag">Cafe</span>
                     <h3>Godiva Chocolatier</h3>
                     <p>A premier Belgian manufacturer of premium luxury chocolates, masterfully crafted truffles, and decadent artisanal confectionery treats.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 243</div>
-                        <div class="meta-item location-icon">Ground Floor, Unit 19</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 243</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Ground Floor, Unit 19</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif logo-dark">WOLFGANG'S<br><span class="sub-logo">STEAKHOUSE</span></div>
+                <div class="logo-box">
+                    <img src="assets/wolfgang's-steakhouse.png" alt="Wolfgang's Steakhouse Logo" class="brand-logo logo-full">
+                </div>
                 <div class="card-content">
-                    <span class="store-tag">Food & Restaurant</span>
+                    <span class="store-tag">Restaurant</span>
                     <h3>Wolfgang's Steakhouse</h3>
                     <p>An elite New York City steakhouse acclaimed for serving phenomenal, perfectly dry-aged USDA Prime beef cuts.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 253</div>
-                        <div class="meta-item location-icon">Level 3, Unit 01</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 253</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 3, Unit 01</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif logo-italic">Café Kitsuné</div>
+                <div class="logo-box">
+                    <img src="assets/cafe-kitsune.webp" alt="Café Kitsuné Logo" class="brand-logo kitsune">
+                </div>
                 <div class="card-content">
-                    <span class="store-tag">Food & Cafe</span>
+                    <span class="store-tag">Restaurant</span>
                     <h3>Café Kitsuné</h3>
                     <p>The iconic specialty coffee concept by Maison Kitsuné, seamlessly blending minimalist Parisian aesthetics with premium coffee culture.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 263</div>
-                        <div class="meta-item location-icon">Ground Floor, Unit 20</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 263</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Ground Floor, Unit 20</span>
+                        </div>
                     </div>
                 </div>
             </div>
-
+            
             <div class="store-card">
-                <div class="logo-box">dyson</div>
+                <div class="logo-box">
+                    <img src="assets/dyson.png" alt="Dyson Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Electronics</span>
                     <h3>Dyson</h3>
                     <p>A global technology pioneer revolutionizing home appliances with high-performance cord-free vacuums, air purifiers, and hair care styling tools.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 273</div>
-                        <div class="meta-item location-icon">Level 2, Unit 01</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 273</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 2, Unit 01</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box">B&O<br><span class="sub-logo">BANG & OLUFSEN</span></div>
+                <div class="logo-box">
+                    <img src="assets/bang-olufsen.png" alt="Bang & Olufsen Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Electronics</span>
                     <h3>Bang & Olufsen</h3>
                     <p>A luxury Danish audio brand creating high-end acoustic masterpieces combining sublime sound, bespoke design, and meticulous craftsmanship.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 283</div>
-                        <div class="meta-item location-icon">Level 2, Unit 02</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 283</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 2, Unit 02</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-italic">BOSE</div>
+                <div class="logo-box">
+                    <img src="assets/bose.png" alt="Bose Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Electronics</span>
                     <h3>Bose</h3>
                     <p>A world leader in premium audio technology, universally recognized for industry-defining noise-cancelling headphones and immersive home audio.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 293</div>
-                        <div class="meta-item location-icon">Level 2, Unit 03</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 293</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 2, Unit 03</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-ikea">IKEA</div>
+                <div class="logo-box">
+                    <img src="assets/ikea.png" alt="IKEA Planning Studio Logo" class="brand-logo logo-full">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Home Living</span>
                     <h3>IKEA Planning Studio</h3>
                     <p>A dedicated design hub providing custom home interior planning solutions, smart modular wardrobes, and tailored kitchen design services.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 304</div>
-                        <div class="meta-item location-icon">Level 3, Unit 10</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 304</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 3, Unit 10</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-primary">SAMSUNG</div>
+                <div class="logo-box">
+                    <img src="assets/samsung.png" alt="Samsung Experience Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Electronics</span>
                     <h3>Samsung Experience</h3>
                     <p>An immersive flagship technology storefront presenting the newest ecosystem of Galaxy mobile smartphones, tablets, wearables, and displays.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 314</div>
-                        <div class="meta-item location-icon">Level 2, Unit 05</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 314</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 2, Unit 05</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box"> Apple</div>
+                <div class="logo-box">
+                    <img src="assets/apple.png" alt="Apple Premium Logo" class="brand-logo logo-square">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Electronics</span>
                     <h3>Apple Premium</h3>
                     <p>An authorized premium showcase highlighting innovative Apple products, professional technical product support, and Apple-certified accessories.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 324</div>
-                        <div class="meta-item location-icon">Level 2, Unit 06</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 324</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 2, Unit 06</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-primary logo-italic">DECATHLON</div>
+                <div class="logo-box">
+                    <img src="assets/decathlon.png" alt="Decathlon Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Sports</span>
                     <h3>Decathlon</h3>
                     <p>A massive sports superstore presenting high-quality, innovative apparel, sporting equipment, and gears for over 60 diverse athletic disciplines.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 334</div>
-                        <div class="meta-item location-icon">Level 3, Unit 15</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 334</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 3, Unit 15</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box">on</div>
+                <div class="logo-box">
+                    <img src="assets/on-running.png" alt="On Running Logo" class="brand-logo logo-square">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Sports</span>
                     <h3>On Running</h3>
                     <p>A high-performance Swiss athletic running brand delivering industry-disrupting cloud-cushioned running footwear and premium active apparel.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 344</div>
-                        <div class="meta-item location-icon">Level 1, Unit 40</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 344</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 40</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-italic">NIKE</div>
+                <div class="logo-box">
+                    <img src="assets/nike.png" alt="Nike Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Sports</span>
                     <h3>Nike</h3>
                     <p>The ultimate athletic destination for cutting-edge footwear, engineered sportswear, fitness training apparel, and specialized sports gear gear.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 354</div>
-                        <div class="meta-item location-icon">Level 1, Unit 41</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 354</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 1, Unit 41</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-dark">TECHNOGYM</div>
+                <div class="logo-box">
+                    <img src="assets/technogym.png" alt="Technogym Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Sports / Fitness</span>
                     <h3>Technogym</h3>
                     <p>The world's premium manufacturer of elite bio-mechanically precise fitness machines, connected smart workout treadmills, and home wellness gear.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 364</div>
-                        <div class="meta-item location-icon">Level 3, Unit 20</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 364</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 3, Unit 20</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-light logo-italic">PELOTON</div>
+                <div class="logo-box">
+                    <img src="assets/peloton.png" alt="Peloton Logo" class="brand-logo logo-square">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Sports / Fitness</span>
                     <h3>Peloton</h3>
                     <p>An interactive fitness technology studio offering smart indoor exercise bikes, digital streaming treadmill equipment, and global community metrics.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 374</div>
-                        <div class="meta-item location-icon">Level 3, Unit 21</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 374</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 3, Unit 21</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="store-card">
-                <div class="logo-box logo-serif">RH</div>
+                <div class="logo-box">
+                    <img src="assets/restoration-hardware.png" alt="Restoration Hardware Logo" class="brand-logo logo-wide">
+                </div>
                 <div class="card-content">
                     <span class="store-tag">Home Living</span>
                     <h3>Restoration Hardware</h3>
                     <p>A luxury home furnishings gallery displaying curated upscale collections of timeless, masterfully crafted luxury furniture, lighting, and textiles.</p>
                     <div class="store-meta">
-                        <div class="meta-item phone-icon">+62 21 500 384</div>
-                        <div class="meta-item location-icon">Level 3, Unit 25</div>
+                        <div class="meta-item">
+                            <img src="assets/phone.png" alt="Phone" class="meta-icon">
+                            <span>+62 21 500 384</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="assets/location.png" alt="Location" class="meta-icon">
+                            <span>Level 3, Unit 25</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
     </main>
-
-<footer class="footer">
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
                 <h4 class="footer-heading">LINKS</h4>
@@ -580,16 +895,16 @@
                 <h4 class="footer-heading">CONNECT WITH US</h4>
                 <div class="social-container">
                     <a class="social-icon instagram" href="https://instagram.com" target="_blank">
-                        <img src="/assets/instagram.png" alt="Instagram">
+                        <img src="assets/instagram.png" alt="Instagram">
                     </a>
                     <a class="social-icon tiktok" href="https://tiktok.com" target="_blank">
-                        <img src="/assets/tiktok.png" alt="TikTok">
+                        <img src="assets/tiktok.png" alt="TikTok">
                     </a>
                     <a class="social-icon facebook" href="https://facebook.com" target="_blank">
-                        <img src="/assets/facebook.png" alt="Facebook">
+                        <img src="assets/facebook.png" alt="Facebook">
                     </a>
                     <a class="social-icon x" href="https://x.com" target="_blank">
-                        <img src="/assets/X.png" alt="X">
+                        <img src="assets/X.png" alt="X">
                     </a>
                 </div>
             </div>
@@ -598,10 +913,10 @@
                 <h4 class="footer-heading">DOWNLOAD OUR APP</h4>
                 <div class="app-buttons">
                     <a href="#" class="app-btn app-store">
-                        <img src="/assets/appstore.png" alt="Download on App Store">
+                        <img src="assets/appstore.png" alt="Download on App Store">
                     </a>
                     <a href="#" class="app-btn google-play">
-                        <img src="/assets/googleplay.png" alt="Get it on Google Play">
+                        <img src="assets/googleplay.png" alt="Get it on Google Play">
                     </a>
                 </div>
             </div>
@@ -611,5 +926,6 @@
             © 2026 FONTDALE | ALL RIGHTS RESERVED
         </div>
     </footer>
+
 </body>
 </html>

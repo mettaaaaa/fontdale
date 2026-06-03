@@ -8,6 +8,7 @@ body {
     font-family: 'Manrope', sans-serif;
     background-color: #FAF9F5;
     color: #1A1A1A;
+    -webkit-font-smoothing: antialiased;
 }
 
 .wrapper {
@@ -74,6 +75,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transition: transform 0.2s ease;
 }
 
 .profile-btn img {
@@ -84,6 +86,10 @@ body {
 
 .profile-btn:hover {
     transform: scale(1.05);
+}
+
+.menu-toggle {
+    display: none;
 }
 
 .directory-container {
@@ -122,20 +128,43 @@ body {
 .dropdown-trigger {
     width: 100%;
     background-color: #ffffff;
-    border: 1.6px solid #1A1A1A; 
-    border-radius: 12px;
+    border: 1px solid #F0F0F0; 
+    border-radius: 16px; 
     padding: 16px 28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     outline: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); 
+    transition: all 0.3s ease;
 }
 
-.dropdown-trigger .selected-value {
-    font-size: 18px;
-    font-weight: 700; 
-    color: #1A1A1A;
+.dropdown-trigger:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #F0F0F0;
+    border-radius: 16px;
+    padding: 8px; 
+    list-style: none;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06); 
+    z-index: 99;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown-item {
+    border-radius: 8px; 
 }
 
 .dropdown-chevron {
@@ -143,10 +172,16 @@ body {
     height: 8px;
     border-right: 2px solid #1A1A1A;
     border-bottom: 2px solid #1A1A1A;
-    transform: rotate(45deg); /* Menghadap bawah */
+    transform: rotate(45deg); 
     transition: transform 0.3s ease;
     margin-right: 4px;
     margin-top: -4px;
+}
+
+.dropdown.open .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .dropdown.open .dropdown-chevron {
@@ -187,6 +222,26 @@ body {
     font-weight: 600;
 }
 
+.dropdown-item a {
+    text-decoration: none; 
+    color: inherit;        
+    display: block;        
+    width: 100%;
+}
+
+.dropdown-trigger .selected-value {
+    font-size: 18px;
+    font-weight: 400px;
+    color: #1A1A1A;
+    letter-spacing: 1px;
+}
+
+.dropdown-item.active, .dropdown-item:hover {
+    background-color: #FAF9F5; 
+    font-weight: 400px;
+    color: #000000;
+}
+
 .store-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -194,7 +249,7 @@ body {
 }
 
 .store-card {
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
@@ -253,22 +308,19 @@ body {
 .meta-item {
     display: flex;
     align-items: center;
-    position: relative;
-    padding-left: 16px;
+    gap: 6px; 
 }
 
-.meta-item::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #999999;
-    font-size: 14px;
+.meta-icon {
+    width: 14px; 
+    height: 14px;
+    object-fit: contain;
 }
 
 .logo-box {
     height: 130px;
-    background-color: #fafafa;
-    border-bottom: 1px solid #f2f2f2;
+    background-color: #ffffff;
+    border-bottom: 2px solid #f4f4f4;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,7 +328,6 @@ body {
     padding: 20px;
     user-select: none;
     text-align: center;
-    
     font-family: 'Manrope', sans-serif;
     font-size: 20px;
     font-weight: 700;
@@ -285,67 +336,39 @@ body {
     color: #1A1A1A;
 }
 
-.sub-logo {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-top: 4px;
-    font-weight: 400;
-    text-transform: uppercase;
-    opacity: 0.8;
+.brand-logo {
+    max-width: 130%;
+    max-height: 130%;
+    object-fit: contain; 
+    padding: 10px;      
 }
 
-.logo-serif { 
-    font-family: 'Playfair Display SC', serif; 
-    letter-spacing: 3px;
-}
-.logo-light { 
-    font-weight: 300; 
-    letter-spacing: 4px;
-}
-.logo-italic { 
-    font-style: italic; 
-    text-transform: none; 
-    font-weight: 500;
+.brand-logo.logo-small {
+    max-width: 250%;
+    max-height: 250%;
+    object-fit: contain; 
+    padding: 10px;
 }
 
-.logo-danger { color: #dc3545; }      /* Din Tai Fung */
-.logo-primary { color: #0f4c81; }     /* Samsung, Decathlon */
-.logo-info { color: #00a8cc; }        /* Bath & Body Works */
-.logo-success { color: #1b4d3e; }     /* The Body Shop */
-.logo-warning { color: #b38f4f; }     /* Godiva */
-
-.logo-dark {
-    background-color: #111111;
-    color: #ffffff;
-    border-bottom: 1px solid #222222;
+.brand-logo.logo-big {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    padding: 10px;
 }
 
-.logo-ikea {
-    background-color: #0051ba;
-    color: #ffcc00 !important;
-    font-style: italic;
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -1px;
+.brand-logo.logo-full {
+    max-width: 200%;
+    max-height: 200%;
+    object-fit: contain; 
+    padding: 10px;
 }
 
-.logo-box.logo-circle {
-    position: relative;
-    font-size: 12px;
-    line-height: 1.2;
-}
-.logo-box.logo-circle::after {
-    content: "";
-    position: absolute;
-    width: 85px;
-    height: 85px;
-    border: 2px solid #1b4d3e;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
+.brand-logo.kitsune {
+    max-width: 170%;
+    max-height: 170%;
+    object-fit: contain; 
+    padding: 10px;
 }
 
 .footer {
@@ -415,33 +438,10 @@ body {
     height: auto;
 }
 
-.social-icon.instagram img {
-    width: 65px;
-    position: relative;
-    right: 10px;
-    top: -20px;
-}
-
-.social-icon.tiktok img {
-    width: 84px; 
-    position: relative;
-    right: 38px;
-    top: -20px;
-}
-
-.social-icon.facebook img {
-    width: 85px;
-    position: relative;
-    right: 75px;
-    top: -20px;
-}
-
-.social-icon.x img {
-    width: 80px; 
-    position: relative;
-    right: 110px;
-    top: -19px;
-}
+.social-icon.instagram img { width: 65px; position: relative; right: 10px; top: -20px; }
+.social-icon.tiktok img { width: 84px; position: relative; right: 38px; top: -20px; }
+.social-icon.facebook img { width: 85px; position: relative; right: 75px; top: -20px; }
+.social-icon.x img { width: 80px; position: relative; right: 110px; top: -19px; }
 
 .social-icon:hover {
     transform: translateY(-3px);
@@ -483,14 +483,135 @@ body {
     color: #8A8A8A;
 }
 
+@media (max-width: 1024px) {
+    .header-wrapper {
+        padding: 0 30px;
+    }
+
+    .main-nav {
+        gap: 24px;
+        margin-right: 20px;
+    }
+
+    .store-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
 @media (max-width: 992px) {
     .footer-container {
         grid-template-columns: repeat(2, 1fr); 
         gap: 32px;
+        left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-wrapper {
+        padding: 16px 24px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .brand {
+        order: 1;
+        margin-right: auto;
+    }
+
+    .profile-btn {
+        order: 2;
+        margin-right: 16px;
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        order: 3;
+        z-index: 101;
+    }
+
+    .menu-toggle span {
+        width: 24px;
+        height: 3px;
+        background-color: #1A1A1A;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #FAF9F5;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        border-top: 1px solid #EBE9E2;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        z-index: 99;
+    }
+
+    .main-nav.open {
+        max-height: 350px;
+    }
+
+    .main-nav a {
+        width: 100%;
+        padding: 16px 24px;
+        border-bottom: 1px solid #EBE9E2;
+    }
+
+    .directory-hero h1 {
+        font-size: 32px;
     }
 }
 
 @media (max-width: 576px) {
+    .brand {
+        font-size: 28px;
+    }
+
+    .directory-container {
+        padding: 32px 16px;
+    }
+
+    .directory-hero h1 {
+        font-size: 28px;
+    }
+
+    .dropdown {
+        max-width: 100%;
+    }
+
+    .store-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
     .footer {
         padding: 48px 20px 24px 20px;
     }
@@ -507,5 +628,10 @@ body {
     .app-buttons {
         flex-direction: row; 
         gap: 12px;
+    }
+
+    .social-container {
+        flex-wrap: wrap;
+        gap: 8px;
     }
 }
